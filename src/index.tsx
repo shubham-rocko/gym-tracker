@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
+
+declare global {
+  interface Window {
+    // TODO: replace this with a more specific type based on usage
+    dataLayer: any[];
+  }
+}
+window.dataLayer = window.dataLayer || [];
 
 
 const root = ReactDOM.createRoot(
